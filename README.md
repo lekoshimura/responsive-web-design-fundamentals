@@ -92,4 +92,9 @@ Mais exemplos:
 
  ---------------------------------------------------
 
- ## Flexbox
+## Flexbox
+![flexbox](flex1.png)
+
+![flexbox](flex2.png)
+
+![flexbox](flex3.png)
