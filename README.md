@@ -98,3 +98,9 @@ Mais exemplos:
 ![flexbox](flex2.png)
 
 ![flexbox](flex3.png)
+
+ ---------------------------------------------------
+
+ ## Patterns
+
+ 
