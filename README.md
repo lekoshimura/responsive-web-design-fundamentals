@@ -36,7 +36,7 @@
 
 ## Setting the Viewport
 * A typical mobile-optimized site contains something like the following:
-  ```
+  ```html
   <meta name="viewport" content="width=device-width,initial-scale=1">
   ```
  * `meta name="viewport"`: diz para o browser que sabemos o que estamos fazendo e não queremos que ele tente adivinhar o DIP
@@ -57,22 +57,22 @@
 
 ## Adding a Media Query
 * _só é carregado quando a tela tem largura maior do que 500px_ <br />
-```
+```html
 <link rel="stylesheet" media="screen and (min-width:500px)" href="500px.css">
 ```
 
 * _[idem]_<br />
-```
+```css
 @media screen and (min-width: 500px) {body {background-color: red}}
 ```
 
 * _@import tem performance ruim. evite._<br />
-```
+```css
 @import url("no.css") only screen and (min-width:500px)
 ```
 
 Mais exemplos:
-```
+```css
 @media screen and (min-width: 0px) and (max-width: 400px) {
   body {background-color: red;}
 }
@@ -101,6 +101,38 @@ Mais exemplos:
 
  ---------------------------------------------------
 
- ## Patterns
+## Patterns: Mostly Fluid
+Baseia-se em Flexbox e numa estrutura de grid definida por breakpoints (larguras de tela). Quando a tela atinge a largura máxima desejada, adiciona-se margens.
 
- 
+![MostlyFluid.png](MostlyFluid.png)
+
+```css
+.container {
+  display: flex; flex-wrap: wrap;
+}
+
+@media screen and (min-width: 450px){
+  .box {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .box {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+```
+
+## Patterns: Layout Shifter
+Idem a Mostly Fluid com o uso do parâmetro css ```order``` para alterar a posição de elementos a cada breakpoint.
+
+![LayoutShifter](LayoutShifter.png)
