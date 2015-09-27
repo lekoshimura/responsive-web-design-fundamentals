@@ -136,3 +136,57 @@ Baseia-se em Flexbox e numa estrutura de grid definida por breakpoints (larguras
 Idem a Mostly Fluid com o uso do parâmetro css ```order``` para alterar a posição de elementos a cada breakpoint.
 
 ![LayoutShifter](LayoutShifter.png)
+
+## Patterns: Off-Canvas
+É o que tem navigation bar (ou side nav).
+```css
+.nav {
+  width: 300px;
+  position: absolute;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-300px, 0);
+  transform: translate(-300px, 0);
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+.nav.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+```
+```javascript
+menu.addEventListener('click', function(e) {
+  drawer.classList.toggle('open');
+  e.stopPropagation();
+});
+```
+**
+nota: e.stopPropagation() previne que o evento "borbulhe" até o nível mais 
+alto do DOM. Veja no [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples#Example_5:_Event_Propagation)
+**
+
+## Tables: técnica Hidden Columns
+
+Oculta-se algumas colunas de acordo com breakpoints.
+
+```html
+<table>
+  <tr>
+    <td class="fica">Nome</td>
+    <td class="naofica">Valor 1</td>
+    <td class="naofica">Valor 2</td>
+    <td class="fica">Total</td>
+  </tr>
+</table>
+```
+
+```css
+  @media screen and (max-width:450px) {
+    .naofica {
+      display:none;
+    }
+  }
+```
+
+
