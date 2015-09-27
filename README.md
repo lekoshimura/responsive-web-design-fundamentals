@@ -47,7 +47,7 @@
   * use a definição acima. Sempre.
   * É considerado que 48 pixels de largura e altura é o mínimo que um elemento deve ter para ser clicável em tela pequena.
 
-## Roteiro de otimização par responsividade
+## Roteiro de otimização para responsividade
 * Adicionar `meta name="viewport"`
 * Ajustar CSS para que tudo seja exibido em uma coluna. Use larguras relativas (width: nnn%) de maneira que os elementos expandam-se para ocupar a largura total da viewport.
 * Certifique que os links de botões sejam fáceis de serem clicados (48px)
@@ -162,7 +162,7 @@ menu.addEventListener('click', function(e) {
 });
 ```
 **
-nota: e.stopPropagation() previne que o evento "borbulhe" até o nível mais 
+nota: e.stopPropagation() previne que o evento "borbulhe" até o nível mais
 alto do DOM. Veja no [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples#Example_5:_Event_Propagation)
 **
 
@@ -189,4 +189,16 @@ Oculta-se algumas colunas de acordo com breakpoints.
   }
 ```
 
+## Tables: técnica No More Tables
 
+Conforme a tela diminui, a tabela tansforma-se em uma lista.
+
+![table-notable](table-notable.png)
+![table-notable](table-notable-1.png)
+
+## Fonts
+
+* Considera-se que a largura ideal comporta 65 caracteres por linha.
+* O instrutor sempre usa no mínimo:
+ * ```css font-size: 16px;```
+ * ```css line-height: 1.2em;```
